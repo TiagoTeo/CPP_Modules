@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:46:15 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/03 19:55:08 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:43:25 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Account::~Account(){
 	_displayTimestamp();
 	_nbAccounts -= 1;
 	_totalAmount -= this->_amount;
-	std::cout << "index: " << this->_accountIndex \
+	std::cout << "index:" << this->_accountIndex \
 	<< ";amount:" << this->_amount \
 	<< ";closed" << std::endl;
 }
