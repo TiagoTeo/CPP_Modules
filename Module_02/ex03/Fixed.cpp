@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:53:11 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/24 12:50:45 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/10/24 13:04:15 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ int	Fixed::fBits = 8;
 //OCF
 Fixed::Fixed() { //Default constructor
 	rawBits = 0;
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::~Fixed() { //Destructor
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &other) { // Copy constructor
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Fixed	&Fixed::operator=(Fixed const &other) { //Copy assignment operator
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->rawBits = other.getRawBits();
 	return (*this);
@@ -38,12 +38,12 @@ Fixed	&Fixed::operator=(Fixed const &other) { //Copy assignment operator
 
 //Overload constructor fts
 Fixed::Fixed(const int n) {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(n << fBits);
 }
 
 Fixed::Fixed(const float n) {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	//std::cout << "F = " << n << std::endl << "1 << fBits = " << (1 << fBits) << std::endl << "n * (1 << fBits) = " << n * (1 << fBits) << std::endl << "roundf(n * (1 << fBits) = " << roundf(n * (1 << fBits)) << std::endl;
 	this->setRawBits(roundf(n * (1 << fBits)));
 }
@@ -154,4 +154,10 @@ float	Fixed::toFloat(void) const {
 
 int	Fixed::toInt(void) const {
 	return (this->getRawBits() >> fBits);
+}
+
+Fixed	Fixed::abs() const {
+	if (*this < 0)
+		return (*this * -1);
+	return (*this);
 }
