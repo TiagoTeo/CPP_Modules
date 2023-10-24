@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:29:42 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/24 16:46:36 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:53:20 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,11 @@ std::string	ClapTrap::getName() {
 
 unsigned int	ClapTrap::getAttackDamage() {
 	return (this->attackDamage);
+}
+
+unsigned int	ClapTrap::getEnergyPoints() {
+	return (this->energyPoints);
+}
+unsigned int	ClapTrap::getHitPoints() {
+	return (this->hitPoints);
 }
