@@ -6,14 +6,14 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:31:48 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 12:18:43 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:38:50 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-	this->name = "default";
+	//this->name = "default";
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
@@ -53,5 +53,5 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
 }
 
 void	FragTrap::highFivesGuys() {
-	std::cout << "FragTrap " << name << "gives a fucking hi5! 0.0" << std::endl;
+	std::cout << "FragTrap " << name << " gives a fucking hi5! 0.0" << std::endl;
 }
