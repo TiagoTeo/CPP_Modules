@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:41:59 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/10 16:25:21 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:35:12 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	getText_and_replace(std::string& text, std::ifstream& inputFile, std::strin
 }
 
 int	get_files(std::ifstream& inputFile, std::ofstream& outputFile, std::string fileName) {
-	inputFile.open(fileName);
+	inputFile.open(fileName.c_str());
 	if (!inputFile) {
 		std::cerr << "Error while opening file: " << fileName << std::endl;
 		return (1);
 	}
 	std::string	outputFileName = fileName + ".replace";
-	outputFile.open(outputFileName);
+	outputFile.open(outputFileName.c_str());
 	if (!outputFile) {
 		std::cerr << "Error while creating file: " << fileName << std::endl;
 		return (1);

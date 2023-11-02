@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:56:35 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/09 17:01:24 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:27:01 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,4 @@ Zombie	*zombieHorde(int N, std::string name) {
 	for (int i = 0; i < N; i++)
 		zeds[i].setName(name);
 	return (zeds);
-}
+}	
