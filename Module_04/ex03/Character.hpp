@@ -15,7 +15,7 @@ class	Character : public ICharacter {
 		Character(const Character &other);
 		Character	&operator=(const Character &other);
 
-		const std::string	&get_name() const;
+		const std::string	&getName() const;
 		void equip(AMateria *mat);
         void unequip(int idx);
 		void use(int idx, ICharacter &target);

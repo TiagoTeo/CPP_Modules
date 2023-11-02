@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:33:31 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/26 17:47:16 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:12:06 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Character::Character(const Character &other) {
 Character &Character::operator=(const Character &other) {
 	if (this != &other)
 	{
-		name = other.get_name();
+		name = other.getName();
 		for (int i = 0; i < 4; i++){
        		delete materias[i];
 			materias[i] = other.materias[i]->clone();
@@ -50,8 +50,8 @@ Character &Character::operator=(const Character &other) {
 	return (*this);
 }
 
-const std::string	&Character::get_name() const {
-	return (name);
+const std::string	&Character::getName() const {
+	return (this->name);
 }
 
 void Character::equip(AMateria *mat) {
