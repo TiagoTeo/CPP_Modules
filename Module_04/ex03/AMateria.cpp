@@ -6,13 +6,13 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:36:52 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/26 17:17:30 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:02:34 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : typeMateria("NULL") {
+AMateria::AMateria() {
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
@@ -40,7 +40,6 @@ const std::string	&AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter &target){
-
         std::cout << "* Abstract Materia " << target.getName() \
         << " *"<< std::endl;
 }
