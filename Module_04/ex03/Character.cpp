@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:33:31 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/11/02 18:12:06 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:52:31 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void Character::equip(AMateria *mat) {
     }
 }
 void Character::unequip(int idx) {
+	delete materias[idx];
 	materias[idx] = 0;
 }
 void Character::use(int idx, ICharacter &target) {
