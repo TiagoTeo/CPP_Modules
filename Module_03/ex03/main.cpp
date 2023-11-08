@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:32:23 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 12:33:40 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:27:13 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 int main( void ) {
 
-	DiamondTrap x("DDDDDD");
+	DiamondTrap d("DIAMD");
+	ClapTrap c("CLAP");
+	// FragTrap f("FRAG");
+	// ScavTrap s("SCAV");
 	
-	x.whoAmI();
-	x.guardGate();
-	x.highFivesGuys();
-	x.attack("something");
+	d.whoAmI();
+	d.guardGate();
+	d.highFivesGuys();
+	d.attack("something");
+	// d.attack(c.getName());
+	// c.takeDamege(d.getAttackDamage());
+	// c.beRepaired(5);
 	return 0;
 }

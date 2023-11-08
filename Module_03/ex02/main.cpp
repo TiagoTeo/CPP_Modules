@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:32:23 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/24 17:03:28 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:18:40 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) {
 
 	ClapTrap x("CLAP");
-	FragTrap y("SCAV");
+	FragTrap y("FRAG");
 
 	y.highFivesGuys();
 	

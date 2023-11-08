@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:31:48 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 12:18:43 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:18:51 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
 }
 
 void	FragTrap::highFivesGuys() {
-	std::cout << "FragTrap " << name << "gives a fucking hi5! 0.0" << std::endl;
+	std::cout << "FragTrap " << name << " gives a fucking hi5! 0.0" << std::endl;
 }
