@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:36:52 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 17:10:23 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:15:26 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::~Dog() {
 
 Dog::Dog(const Dog &other) {
 	std::cout << "Dog copy constructor called" << std::endl;
-	brain = other.brain;
+	brain = new Brain();
 	*this = other;
 }
 
@@ -33,7 +33,7 @@ Dog &Dog::operator=(const Dog &other) {
 	if (this != &other)
 	{
 		type = other.getType();
-		brain = other.brain;
+		*brain = *(other.brain);
 	}
 	return (*this);
 }
@@ -46,6 +46,6 @@ void	Dog::setBrainIdea(std::string idea, int index) {
 	brain->setIdea(idea, index);
 }
 
-std::string	Dog::getBrainIdea(int index) const {
-	return (brain->getIdea(index));
+void Dog::showBrainIdea(int index){
+    brain->showIdea(index);
 }

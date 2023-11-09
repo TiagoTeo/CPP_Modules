@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:50:23 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 16:45:03 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:10:41 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,13 @@
 
 int main() {
 
-	const Animal* f = new Dog();
-	const Animal* g = new Cat();
-	delete f;//should not create a leak
-	delete g;
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
 
-	std::cout << "---<|>---" << std::endl;
-
-	Dog* i = new Dog();
-	i->setBrainIdea("um", 1);
-	i->setBrainIdea("dois", 2);
-	i->setBrainIdea("tres", 3);
-	
-	Dog* j = i;
-	delete i;
-	
-	std::cout << "1 = " << j->getBrainIdea(1) << \
-	", 2 = " << j->getBrainIdea(2) << \
-	", 3 = " << j->getBrainIdea(3) << std::endl;
-
-	std::cout << "---<|>---" << std::endl;
-
-	Dog* a = new Dog();
-	a->setBrainIdea("um", 1);
-	a->setBrainIdea("dois", 2);
-	a->setBrainIdea("tres", 3);
-	
-	Dog* b = new Dog(*a);
-	delete a;
-	
-	std::cout << "1 = " << b->getBrainIdea(1) << \
-	", 2 = " << b->getBrainIdea(2) << \
-	", 3 = " << b->getBrainIdea(3) << std::endl;
-
-	//delete b; porque e que isto da merda
-
-	std::cout << "---<|>---" << std::endl;
-
-	Animal* arrayAnimals[10];
+    std::cout << "-----------------" << std::endl;
+    Animal* arrayAnimals[10];
 
     for (int i = 0; i < 5; i++){
         arrayAnimals[i] = new Dog();
@@ -68,6 +37,44 @@ int main() {
         arrayAnimals[i]->makeSound();
         delete arrayAnimals[i];
     }
-	
+
+    std::cout << "------IDEAS------" << std::endl;
+    
+    Dog* bonito = new Dog();
+    Dog* tmp2 = new Dog(*bonito);
+
+    bonito->showBrainIdea(5);
+    tmp2->showBrainIdea(5);
+
+    bonito->setBrainIdea("bonito thinks he is pretty", 5);
+    bonito->showBrainIdea(5);
+    tmp2->setBrainIdea("tmp2 thinks he is earth is flat", 5);
+    tmp2->showBrainIdea(5);
+    
+    delete bonito;
+    delete tmp2;
+
+    std::cout << "------------" << std::endl;
+
+    std::cout << "Dog Deep copy" << std::endl;
+    std::cout << std::endl;
+
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
+
+    std::cout << "------------" << std::endl;
+
+    std::cout << "Testing Deep copy" << std::endl;
+    std::cout << std::endl;
+
+    Cat test2;
+    {
+        Cat temp2 = test2;
+    }
+
+    std::cout << "----------------" << std::endl;
+
 	return (0);
 }

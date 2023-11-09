@@ -8,6 +8,7 @@ class	Character : public ICharacter {
 	private:
 		std::string		name;
 		AMateria		*materias[4];
+		AMateria		**floor;
 	public:
 		Character();
 		Character(std::string nameCharacter);
@@ -19,6 +20,7 @@ class	Character : public ICharacter {
 		void equip(AMateria *mat);
         void unequip(int idx);
 		void use(int idx, ICharacter &target);
+		void addFloor(AMateria *mat);
 };
 
 #endif

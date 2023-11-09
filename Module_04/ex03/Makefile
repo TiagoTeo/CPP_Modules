@@ -1,5 +1,5 @@
 NAME = Materia
-C_PP = @c++ #-fsanitize=address -g
+C_PP = @c++ -g#-fsanitize=address -g
 C_PPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC =	main.cpp \
 		AMateria.cpp \

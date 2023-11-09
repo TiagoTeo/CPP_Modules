@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:10:41 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 16:32:12 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:15:56 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	Brain::setIdea(std::string idea, int index) {
 	this->ideas[index] = idea;
 }
 
-std::string	Brain::getIdea(int index) const {
-	return (this->ideas[index]);
+void	Brain::showIdea(int index){
+    std::cout <<  ideas[index] << std::endl;
 }

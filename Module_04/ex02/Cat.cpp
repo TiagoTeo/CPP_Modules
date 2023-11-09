@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mtiago-s <mtiago-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:36:52 by mtiago-s          #+#    #+#             */
-/*   Updated: 2023/10/25 17:10:14 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:14:52 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::~Cat() {
 
 Cat::Cat(const Cat &other) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	brain = other.brain;
+	brain = new Brain();
 	*this = other;
 }
 
@@ -33,7 +33,7 @@ Cat &Cat::operator=(const Cat &other) {
 	if (this != &other)
 	{
 		type = other.getType();
-		brain = other.brain;
+		*brain = *(other.brain);
 	}
 	return (*this);
 }
@@ -46,6 +46,6 @@ void	Cat::setBrainIdea(std::string idea, int index) {
 	brain->setIdea(idea, index);
 }
 
-std::string	Cat::getBrainIdea(int index) const {
-	return (brain->getIdea(index));
+void Cat::showBrainIdea(int index){
+    brain->showIdea(index);
 }
