@@ -1,9 +1,10 @@
-NAME = Bureaucrat
+NAME = form
 C_PP = c++ 
 OBJS_D = objs
 C_PPFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 SRC =	main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 OBJS = $(addprefix $(OBJS_D)/,$(SRC:%.cpp=%.o))
 
 ##### ACTIONS #####
