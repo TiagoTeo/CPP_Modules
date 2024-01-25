@@ -1,4 +1,4 @@
-#include <ScalarConverter.hpp>
+#include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter's Default Constructor called" << std::endl;
@@ -74,12 +74,8 @@ void	ScalarConverter::converter(float value)
 }
 
 const char *ScalarConverter::ImpossibleConversion::what() const throw() {
-	std::stringstream res;
-	res << "char: " << "impossible" << std::endl;
-    res << "int: " << "impossible" << std::endl;
-    res << "float: " << "nanf" << std::endl;
-    res << "double: " << "nan" << std::endl;
-	return (res.str().c_str());
+
+	return ("char: impossible\nint: impossible\nfloat: nanf\ndouble: nan\n");
 }
 
 void	ScalarConverter::ScalarConverter::displayLimits(std::string Flimit, std::string Dlimit)
@@ -139,4 +135,86 @@ void	ScalarConverter::converterType(std::string value)
 		return converter(valueDouble);
 	}
 	}
+}
+
+int ScalarConverter::checkChar(std::string value)
+{
+	if (value.size() != 1)
+		return (0);
+	else if (!std::isalpha(value[0]))
+		return (0);
+	return (1);
+}
+
+
+int ScalarConverter::checkInt(std::string value)
+{
+	if (value.size() > 11)
+		return (0);
+	else if (value.size() == 11 && value[0] != '-' && value[0] != '+')
+		return (0);
+	else if (value.size() == 11 && (value.compare("-2147483648") > 0 || value.compare("+2147483647") > 0))
+		return (0);
+	else if (value.size() == 10 && value.compare("2147483647") > 0)
+		return (0);
+	for (size_t i = 0; value[i]; i++) {
+		if (!std::isdigit(value[i]) && value[i] != '-' && value[i] != '+')
+			return (0);
+		else if ((value[i] == '-' || value[i] == '+') && i != 0)
+			return (0);
+	}
+	return (1);
+}
+
+int ScalarConverter::checkFloat(std::string value)
+{
+	if ((int)value.find('f') == -1 || (int)value.find('.') == -1)
+		return (0);
+	else if (value.size() < 4)
+		return (0);
+	for (size_t i = 0; value[i]; i++) {
+		if (value[i] == 'f' && i != value.size() - 1)
+			return (0);
+		else if (value[i] == '.' && (i == value.size() - 1 || i == value.size() - 2 || i == 0))
+			return (0);
+		else if ((value[i] == '-' || value[i] == '+') && i != 0)
+			return (0);
+		else if (!std::isdigit(value[i]) && value[i] != '-' && value[i] != '+' && value[i] != '.' && value[i] != 'f')
+			return (0);
+	}
+	return (1);
+}
+
+int ScalarConverter::checkDouble(std::string value)
+{
+	if ((int)value.find('.') == -1)
+		return (0);
+	else if (value.size() < 3)
+		return (0);
+	for (size_t i = 0; value[i]; i++) {
+		if (value[i] == '.' && (i == value.size() - 1 || i == 0))
+			return (0);
+		else if ((value[i] == '-' || value[i] == '+') && i != 0)
+			return (0);
+		else if (!std::isdigit(value[i]) && value[i] != '-' && value[i] != '+' && value[i] != '.')
+			return (0);
+	}
+	return (1);
+}
+
+std::string	ScalarConverter::getType(std::string value)
+{
+	if (value.empty())
+		throw ImpossibleConversion();
+	if (checkChar(value))
+		return ("char");
+	else if (checkInt(value))
+		return ("int");
+	else if (checkFloat(value))
+		return ("float");
+	else if (checkDouble(value))
+		return ("double");
+	else
+		throw ImpossibleConversion();
+	return ("int");
 }
