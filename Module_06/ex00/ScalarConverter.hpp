@@ -23,11 +23,11 @@ class	ScalarConverter {
 		static int			checkInt(std::string value);
 		static int			checkFloat(std::string value);
 		static int			checkDouble(std::string value);
-	public:
 		ScalarConverter();
 		~ScalarConverter();
 		ScalarConverter(const ScalarConverter &other);
 		ScalarConverter	&operator=(const ScalarConverter &other);
+	public:
 
 		static void converter(std::string value);
 
