@@ -21,6 +21,7 @@ class	Span {
 		std::vector<int>	getVector() const;
 		int		getMax() const;
 		void	addListNumber(unsigned int amount);
+		void	addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		void	addNumber(int nb);
 		int		shortestSpan();
 		int		longestSpan();

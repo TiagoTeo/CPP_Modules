@@ -49,6 +49,13 @@ void	Span::addNumber(int nb)
 	
 }
 
+void	Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	if (std::distance(start, end) > _max)
+		throw std::exception();
+	_arr.insert(_arr.end(), start, end);
+}
+
 void	Span::addListNumber(unsigned int amount)
 {
 	if (amount > this->_max)
