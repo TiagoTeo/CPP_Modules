@@ -20,6 +20,10 @@ class BitcoinExchange {
 		bool checkFile();
 		void fillData();
 		void execute();
+		void printResult(std::string date, std::string value);
+
+		bool checkDate(std::string date);
+		bool checkValue(std::string value);
 
 		class badCsvFile : public std::exception{
 		public:
