@@ -16,7 +16,7 @@ PresidentialPardonForm::PresidentialPardonForm() : _target("NoTarget") {
 	std::cout << "Presidential Pardon Form with no target default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, 72, 45), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, 25, 5), _target(target) {
 	std::cout << "Presidential Pardon Form constructor called with target: " << _target <<  std::endl;
 }
 
