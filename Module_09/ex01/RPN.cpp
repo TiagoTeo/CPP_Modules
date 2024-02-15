@@ -24,21 +24,10 @@ void RPN::doOperation() {
         std::cout << "Error incorrect Polish Expression" << std::endl;
         exit(1);
     }
-    if ((_arg[1] == '-' || _arg[1] == '+' || _arg[1] == '*' || _arg[1] == '/') && (_arg[0] == '-' || _arg[0] == '+')) {
-        if (_arg[0] == '-') {
-            int top = _data.top();
-            _data.pop();
-            int top2 = _data.top() * -1;
-            _data.push(top2);
-            _data.push(top);
-        }
-        return ;
-    }
     n1 = _data.top();
     _data.pop();
     n2 = _data.top();
     _data.pop();
-    std::cout << "op = "<< n2 << _arg[0] << n1 << std::endl; 
     switch (_arg[0]) {
         case '+':
                 _data.push(n1 + n2);
@@ -53,14 +42,11 @@ void RPN::doOperation() {
                 _data.push(n2 * n1);
                 break;
     }
-    std::cout << "final op = " << _data.top() << std::endl;
 }
 
 void RPN::execute() {
     while (!_arg.empty()) {
-        std::cout << "Arg = " << _arg << std::endl;
         if (std::isdigit(_arg[0])) {
-            std::cout << "pusnhing " << _arg[0] - 48 << std::endl;
             _data.push(static_cast<int>(_arg[0] - 48));
         }
         else
