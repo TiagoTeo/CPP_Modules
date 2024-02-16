@@ -2,8 +2,7 @@ NAME = Whatever
 C_PP = c++ 
 OBJS_D = objs
 C_PPFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
-SRC =	main.cpp \
-		Whatever.cpp
+SRC =	main.cpp
 OBJS = $(addprefix $(OBJS_D)/,$(SRC:%.cpp=%.o))
 
 ##### ACTIONS #####
