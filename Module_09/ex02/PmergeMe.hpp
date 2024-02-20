@@ -34,4 +34,6 @@ class PmergeMe {
             std::cout << elem << " ";
         }
     }
+    template<typename T>
+    void merge(const T &container);
 };

@@ -21,12 +21,21 @@ void PmergeMe::fillConteiners(char **av) {
     }
 }
 
+void PmergeMe::merge(const T &container) {
+    
+}
+
 void PmergeMe::execute() {
+    struct timeval start, end;
+    float miliseconds;
+
     std::cout << "before: " << std::endl;
     printContainer(_vector);
-
-    
-
+    gettimeofday(&start, NULL);
+    merge(_vector);
+    gettimeofday(&end, NULL);
+    miliseconds = static_cast<float>(static_cast<float>(end.tv_sec - start.tv_sec) * 1000 + static_cast<float>(end.tv_usec - start.tv_usec) / 1000);
     std::cout << "after: " << std::endl;
+    std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector: " << miliseconds << " ms" << std::endl;
     printContainer(_vector);
 }
