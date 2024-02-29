@@ -32,7 +32,7 @@ class PmergeMe {
 		};
         class notNumber : public std::exception{
 		public:
-			virtual const char* what() const throw() { return "Error not a number in input"; };
+			virtual const char* what() const throw() { return "Error not a positive int in input"; };
 		};
 
     template<typename T>

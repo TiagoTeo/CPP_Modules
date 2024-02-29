@@ -92,7 +92,7 @@ void PmergeMe::execute() {
     miliseconds = static_cast<float>(static_cast<float>(end.tv_sec - start.tv_sec) * 1000 + static_cast<float>(end.tv_usec - start.tv_usec) / 1000);
     std::cout << "after: ";
     printContainer(_vector);
-    std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector: " << miliseconds << " ms" << std::endl;
+    std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector : " << miliseconds << " ms" << std::endl;
 
     //list
     std::cout << "before: ";
@@ -103,5 +103,5 @@ void PmergeMe::execute() {
     miliseconds = static_cast<float>(static_cast<float>(end.tv_sec - start.tv_sec) * 1000 + static_cast<float>(end.tv_usec - start.tv_usec) / 1000);
     std::cout << "after: ";
     printContainer(_list);
-    std::cout << "Time to process a range of " << _list.size() << " elements with std::list: " << miliseconds << " ms" << std::endl;
+    std::cout << "Time to process a range of " << _list.size() << " elements with std::list : " << miliseconds << " ms" << std::endl;
 }

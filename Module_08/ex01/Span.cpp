@@ -72,29 +72,26 @@ void	Span::addListNumber(unsigned int amount)
 int	Span::shortestSpan( void )
 {
 	int	shortest;
+	std::vector<int> sorted = _arr;
 	
 	if ((int)_arr.size() < 2)
 		throw EmptyArrayException();
+	std::sort(sorted.begin(), sorted.end());
 	shortest = _arr[1] - _arr[0];
-	for (unsigned int i = 0; i < _arr.size(); i++)
-		for (unsigned int j = i + 1; j < _arr.size(); j++)
-			if ((_arr[j] - _arr[i]) < shortest)
-					shortest = _arr[j] - _arr[i];
+	for (unsigned int i = 1; i < sorted.size(); i++)
+		shortest = std::min(shortest, sorted[i] - sorted[i - 1]);
 	return shortest;
 }
 
 int	Span::longestSpan( void )
 {
-	int	longest;
+	std::vector<int> sorted = _arr;
+
 	
 	if ((int)_arr.size() < 2)
 		throw EmptyArrayException();
-	longest = _arr[1] - _arr[0];
-	for (unsigned int i = 0; i < _arr.size(); i++)
-		for (unsigned int j = i + 1; j < _arr.size(); j++)
-			if ((_arr[j] - _arr[i]) > longest)
-					longest = _arr[j] - _arr[i];
-	return longest;
+	std::sort(sorted.begin(), sorted.end());
+	return sorted.back() - sorted.front();
 }
 
 const char	*Span::FullArrayException::what() const throw () {

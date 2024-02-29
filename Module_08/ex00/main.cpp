@@ -8,13 +8,13 @@ int	main(void)
 		std::cout << *easyfind(vec, 2) << std::endl;
 	}
 	catch (const std::exception& e) {
-        std::cerr << "Exception: 567: " << e.what() << std::endl;
+        std::cerr << "Exception: 2: " << e.what() << std::endl;
     }
 	try {
 		std::cout << *easyfind(vec, 567) << std::endl;
 	}
 	catch (const std::exception& e) {
-        std::cerr << "Exception: 567: " << e.what() << std::endl;
+        std::cerr << "Exception: 567:" << e.what() << std::endl;
     }
 
 	std::string abc = "abcdefgijklmnopqrstuvwxyz";
@@ -23,7 +23,7 @@ int	main(void)
 		std::cout << *easyfind(checkChar, 'w') << std::endl;
 	}
 	catch (const std::exception& e) {
-        std::cerr << "Exception: h: " << e.what() << std::endl;
+        std::cerr << "Exception: w: " << e.what() << std::endl;
     }
 	try {
 		std::cout << *easyfind(vec, 'h') << std::endl;

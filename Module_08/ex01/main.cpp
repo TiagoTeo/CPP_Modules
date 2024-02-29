@@ -2,7 +2,7 @@
 
 int	main ()
 {
-	Span test(12345);
+	Span test(100);
 	
 	try {
 		test.shortestSpan();
@@ -11,7 +11,7 @@ int	main ()
 		std::cerr << e.what() << std::endl;
     }
 	try {
-		test.addListNumber(12345);
+		test.addListNumber(100);
 	}
 	catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
